@@ -5,14 +5,14 @@ import * as Yup from "yup";
 const validationSchema = Yup.object({
     referrerName: Yup.string().required('Required'),
     referrerPhone: Yup.number().required("Required"),
-    referrerEmail: Yup.string().email('Invalid email address').required('Required'),
     refereeName: Yup.string().required('Required'),
-    refereeEmail: Yup.string().email('Invalid email address').required('Required'),
     refereePhone: Yup.number().required("Required"),
     courseInterested: Yup.string().required('Required'),
 });
 
 function ReferralForm({ isOpen, handleClose }) {
+    const [isFormTouched, setFormTouched] = React.useState(false);
+
     const formik = useFormik({
         initialValues: {
             referrerName: '',
@@ -33,45 +33,23 @@ function ReferralForm({ isOpen, handleClose }) {
         },
     });
 
-
-    const modalRef = React.useRef();
-    const formRef = React.useRef();
-
-    const [isFormTouched, setFormTouched] = React.useState(false);
-
-    const handleOutsideClick = (e) => {
-        // Check if click is outside both the modal and the form
-        if (modalRef.current && !modalRef.current.contains(e.target) && !formRef.current.contains(e.target)) {
-            if (!isFormTouched) {
-                handleClose();
-            }
-        }
-    };
-
-    React.useEffect(() => {
-        if (isOpen) {
-            document.addEventListener('mousedown', handleOutsideClick);
-        } else {
-            document.removeEventListener('mousedown', handleOutsideClick);
-        }
-        return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
-        };
-        // eslint-disable-next-line 
-    }, [isOpen, isFormTouched]);
-
     const handleChange = (e) => {
         setFormTouched(true);
         formik.handleChange(e);
     };
 
+    const handleOutsideClick = (e) => {
+        if (!e.target.closest('.modal-content') && !isFormTouched) {
+            handleClose();
+        }
+    };
+
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 z-50" onMouseDown={handleOutsideClick}>
             <div
-                ref={modalRef}
-                className="relative bg-white rounded-lg px-8 py-2 w-full max-w-md max-h-[95vh] overflow-y-auto [&::-webkit-scrollbar]:hidden"
+                className="relative bg-white rounded-lg px-8 py-2 w-full max-w-md max-h-[95vh] overflow-y-auto [&::-webkit-scrollbar]:hidden modal-content"
             >
                 <button
                     onClick={handleClose}
@@ -93,7 +71,7 @@ function ReferralForm({ isOpen, handleClose }) {
                     </svg>
                 </button>
                 <h2 className="text-xl font-bold mb-4 text-blue-600">Refer a Friend</h2>
-                <form ref={formRef} onSubmit={formik.handleSubmit}>
+                <form onSubmit={formik.handleSubmit} autoComplete="off">
                     <h3 className="text-base font-semibold mb-1">Your Details</h3>
                     <div className="mb-2">
                         <label className="block text-sm font-medium text-gray-700">Full Name</label>
