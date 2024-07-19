@@ -1,5 +1,6 @@
 import React from "react";
 import Anniversary from "../asset/Anniversary.png";
+import Button from "./ui/button";
 
 function Promo() {
     return (
@@ -23,9 +24,9 @@ function Promo() {
                             up-to <span className="text-blue-500 font-bold">Rs. 15,000</span>
                         </p>
                     </div>
-                    <button className="bg-blue-600 text-white px-4 py-2 my-4 rounded-md font-medium">
+                    <Button>
                         Refer now
-                    </button>
+                    </Button>
                 </div>
                 <img src={Anniversary} alt="promo" className="max-w-[814px] max-h-[650px] object-cover" />
             </div>

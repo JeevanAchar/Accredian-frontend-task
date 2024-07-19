@@ -1,6 +1,7 @@
 import React from "react";
 import { FaAngleDown } from "react-icons/fa";
 import Logo from "../asset/Accredian.png";
+import Button from "./ui/button";
 
 function Navbar() {
     return (
@@ -24,12 +25,12 @@ function Navbar() {
                         </ul>
                     </div>
                     <div className="flex items-center gap-4">
-                        <button className="bg-gray-300 text-gray-700 px-5 py-2 rounded-md font-medium">
+                        <Button type="secondary">
                             Login
-                        </button>
-                        <button className="bg-blue-600 hover:bg-blue-700 font-medium text-white px-5 py-2 rounded-md capitalize">
+                        </Button>
+                        <Button>
                             try for free
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>

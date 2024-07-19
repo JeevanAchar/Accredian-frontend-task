@@ -5,6 +5,7 @@ import Scholar from "../asset/Scholar.png";
 import { MdCurrencyRupee } from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
+import Button from "./ui/button";
 
 function ReferralBenefit() {
     return (
@@ -105,9 +106,9 @@ function ReferralBenefit() {
             </div>
 
             <div className="text-center">
-                <button className="bg-blue-600 text-white px-8 py-2 my-4 rounded-lg font-normal">
+                <Button>
                     Refer Now
-                </button>
+                </Button>
             </div>
         </div>
     );
