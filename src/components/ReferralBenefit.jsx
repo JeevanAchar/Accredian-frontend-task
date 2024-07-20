@@ -19,6 +19,7 @@ function ReferralBenefit() {
         setIsModalOpen(false);
     }
 
+function ReferralBenefit() {
     return (
         <div className="w-full 2xl:max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center my-10">What Are The <span className="text-[#1A73E8]">Referral Benefits?</span></h2>
@@ -122,6 +123,7 @@ function ReferralBenefit() {
                 </Button>
             </div>
             <ReferralForm isOpen={isModalOpen} handleClose={handleCloseModal} />
+            </div>
         </div>
     );
 }
