@@ -1,35 +1,43 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axiosInstance from "../utils/AxiosIntance";
 
 const validationSchema = Yup.object({
     referrerName: Yup.string().required('Required'),
-    referrerPhone: Yup.number().required("Required"),
+    referrerEmail: Yup.string().email("Invalid email").required("Required"),
     refereeName: Yup.string().required('Required'),
-    refereePhone: Yup.number().required("Required"),
+    refereeEmail: Yup.string().email("Invalid email").required("Required"),
     courseInterested: Yup.string().required('Required'),
 });
 
+
 function ReferralForm({ isOpen, handleClose }) {
     const [isFormTouched, setFormTouched] = React.useState(false);
+    const handleSubmit = async (values, { resetForm }) => {
+        try {
+            const { data } = await axiosInstance.post("/api/referral", values);
+            resetForm();
+            handleClose(); // Close modal on successful submission
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
     const formik = useFormik({
         initialValues: {
-            referrerName: '',
-            referrerEmail: '',
-            referrerPhone: '',
-            referralCode: '',
-            refereeName: '',
-            refereeEmail: '',
-            refereePhone: '',
-            courseInterested: '',
-            message: '',
-            howDidYouHear: '',
+            referrerName: "",
+            referrerEmail: "",
+            referralCode: "",
+            refereeName: "",
+            refereeEmail: "",
+            courseInterested: "",
+            message: "",
+            howDidYouHear: "",
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            console.log(values);
-            handleClose(); // Close modal on successful submission
+        onSubmit: (values, formikHelpers) => {
+            handleSubmit(values, formikHelpers);
         },
     });
 
@@ -88,18 +96,18 @@ function ReferralForm({ isOpen, handleClose }) {
                         ) : null}
                     </div>
                     <div className="mb-2">
-                        <label className="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <label className="block text-sm font-medium text-gray-700">Email</label>
                         <input
                             className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
-                            id="referrerPhone"
-                            name="referrerPhone"
-                            type="text"
+                            id="referrerEmail"
+                            name="referrerEmail"
+                            type="email"
                             onChange={handleChange}
-                            value={formik.values.referrerPhone}
+                            value={formik.values.referrerEmail}
                         />
                         {
-                            formik.touched.referrerPhone && formik.errors.referrerPhone ? (
-                                <div className="text-red-600 text-sm">{formik.errors.referrerPhone}</ div>
+                            formik.touched.referrerEmail && formik.errors.referrerEmail ? (
+                                <div className="text-red-600 text-sm">{formik.errors.referrerEmail}</ div>
                             ) : null
                         }
                     </div>
@@ -131,18 +139,18 @@ function ReferralForm({ isOpen, handleClose }) {
                         ) : null}
                     </div>
                     <div className="mb-2">
-                        <label className="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <label className="block text-sm font-medium text-gray-700">Email</label>
                         <input
                             className="mt-1 p-2 block w-full border border-gray-300 rounded-md"
-                            id="refereePhone"
-                            name="refereePhone"
+                            id="refereeEmail"
+                            name="refereeEmail"
                             type="text"
                             onChange={handleChange}
-                            value={formik.values.refereePhone}
+                            value={formik.values.refereeEmail}
                         />
                         {
-                            formik.touched.refereePhone && formik.errors.refereePhone ? (
-                                <div className="text-red-600 text-sm">{formik.errors.refereePhone}</ div>
+                            formik.touched.refereeEmail && formik.errors.refereeEmail ? (
+                                <div className="text-red-600 text-sm">{formik.errors.refereeEmail}</ div>
                             ) : null
                         }
                     </div>

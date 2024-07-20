@@ -1,7 +1,18 @@
 import React from "react";
 import Anniversary from "../asset/Anniversary.png";
 import Button from "./ui/button";
+import ReferralForm from "./ReferralForm";
 
+function Promo() {
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
 function Promo() {
     return (
         <div className="w-full 2xl:max-w-7xl mx-auto">
@@ -24,12 +35,13 @@ function Promo() {
                             up-to <span className="text-blue-500 font-bold">Rs. 15,000</span>
                         </p>
                     </div>
-                    <Button>
+                    <Button onClick={handleOpenModal}>
                         Refer now
                     </Button>
                 </div>
                 <img src={Anniversary} alt="promo" className="max-w-[814px] max-h-[650px] object-cover" />
             </div>
+            <ReferralForm isOpen={isModalOpen} handleClose={handleCloseModal} />
         </div>
     );
 }
