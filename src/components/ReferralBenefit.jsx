@@ -6,16 +6,27 @@ import { MdCurrencyRupee } from "react-icons/md";
 import { FaAngleRight } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import Button from "./ui/button";
+import ReferralForm from "./ReferralForm";
 
 function ReferralBenefit() {
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    }
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
+
     return (
         <div className="w-full 2xl:max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center my-10">What Are The <span className="text-[#1A73E8]">Referral Benefits?</span></h2>
             <div className="w-full flex justify-end">
-                <label class="inline-flex items-center justify-end cursor-pointer gap-3">
-                    <span class="ms-3 text-sm font-medium text-gray-900">Enrolled</span>
-                    <input type="checkbox" value="" class="sr-only peer" />
-                    <div class="relative w-11 h-6 bg-gray-200 outline-1 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white
+                <label className="inline-flex items-center justify-end cursor-pointer gap-3">
+                    <span className="ms-3 text-sm font-medium text-gray-900">Enrolled</span>
+                    <input type="checkbox" value="" className="sr-only peer" />
+                    <div className="relative w-11 h-6 bg-gray-200 outline-1 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white
                      after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
                 </label>
             </div>
@@ -25,7 +36,7 @@ function ReferralBenefit() {
                     <table className="w-full text-sm text-left rtl:text-right">
                         <thead className="text-xs text-white border-b bg-blue-500 border-b-[#AFCEF7]">
                             <tr>
-                                <th scope="col" class="px-6 py-3 capitalize">
+                                <th scope="col" className="px-6 py-3 capitalize">
                                     <span className="flex items-center justify-between gap-4">
                                         All Programs
                                         <FaAngleRight />
@@ -56,13 +67,13 @@ function ReferralBenefit() {
                     <table className="w-full text-sm text-left rtl:text-right">
                         <thead className="text-xs text-[#1350A0] border-b bg-[#AFCEF7] border-b-[#AFCEF7]">
                             <tr>
-                                <th scope="col" class="px-6 py-3">
+                                <th scope="col" className="px-6 py-3">
                                     Programs
                                 </th>
-                                <th scope="col" class="px-6 py-3">
+                                <th scope="col" className="px-6 py-3">
                                     Referrer Bonus
                                 </th>
-                                <th scope="col" class="px-6 py-3">
+                                <th scope="col" className="px-6 py-3">
                                     Referee Bonus
                                 </th>
                             </tr>
@@ -106,10 +117,11 @@ function ReferralBenefit() {
             </div>
 
             <div className="text-center">
-                <Button>
+                <Button onClick={handleOpenModal}>
                     Refer Now
                 </Button>
             </div>
+            <ReferralForm isOpen={isModalOpen} handleClose={handleCloseModal} />
         </div>
     );
 }

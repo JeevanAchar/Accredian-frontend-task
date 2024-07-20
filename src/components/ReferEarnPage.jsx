@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import ReferralForm from './ReferralForm';
 
 const ReferEarnPage = () => {
-    const [isModalOpen, setModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleOpenModal = () => {
-        setModalOpen(true);
+        setIsModalOpen(true);
     };
 
     const handleCloseModal = () => {
-        setModalOpen(false);
+        setIsModalOpen(false);
     };
 
     return (
