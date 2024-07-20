@@ -1,9 +1,8 @@
-import React from 'react';
-import Router from "./router";
+import React from 'react'
 
 const App = () => {
   return (
-    <Router/>
+    <div className='text-2xl'>App</div>
   )
 }
 
