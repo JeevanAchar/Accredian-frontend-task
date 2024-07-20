@@ -19,9 +19,9 @@ function Navbar() {
                 <div className="flex items-center justify-end gap-4">
                     <div>
                         <ul className="flex items-center gap-6 text-sm">
-                            <li>Refer & Earn</li>
-                            <li>Resources</li>
-                            <li>About us</li>
+                            <li className="cursor-pointer">Refer & Earn</li>
+                            <li className="cursor-pointer">Resources</li>
+                            <li className="cursor-pointer">About us</li>
                         </ul>
                     </div>
                     <div className="flex items-center gap-4">

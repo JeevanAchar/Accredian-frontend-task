@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Promo from "../components/Promo";
 import ReferralBenefit from "../components/ReferralBenefit";
+import Footer from "../components/Footer";
 
 function Dashboard() {
     return (
@@ -9,6 +10,7 @@ function Dashboard() {
             <Navbar />
             <Promo />
             <ReferralBenefit />
+            <Footer />
         </div>
     );
 }

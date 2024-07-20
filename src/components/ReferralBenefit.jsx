@@ -49,7 +49,7 @@ function ReferralBenefit() {
                                 AllProgram.map((data) => (
                                     <tr key={data.id}>
                                         <th scope="row" className="px-6 py-4 font-medium border-b-2">
-                                            <span className="flex items-center justify-between gap-4">
+                                            <span className="flex items-center justify-between gap-4 cursor-pointer">
                                                 {
                                                     data.programName
                                                 }

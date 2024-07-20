@@ -15,21 +15,21 @@ function Promo() {
     }
     return (
         <div className="w-full 2xl:max-w-7xl mx-auto">
-            <div className="max-w-3xl bg-blue-400 mx-auto px-6 py-3 font-medium rounded-3xl mt-10" style={{ background: "#E6F0FD" }}>
-                <ul className="flex text-center justify-between">
-                    <li>Refer</li>
-                    <li>Benefit</li>
-                    <li>FAQs</li>
-                    <li>Support</li>
+            <div className="max-w-3xl bg-[#E6F0FD] mx-auto px-6 py-3 font-medium mt-10 md:rounded-3xl">
+                <ul className="flex text-center justify-between text-sm">
+                    <li className="cursor-pointer hover:text-blue-700 transition duration-300 ease-in-out">Refer</li>
+                    <li className="cursor-pointer hover:text-blue-700 transition duration-300 ease-in-out">Benefit</li>
+                    <li className="cursor-pointer hover:text-blue-700 transition duration-300 ease-in-out">FAQs</li>
+                    <li className="cursor-pointer hover:text-blue-700 transition duration-300 ease-in-out">Support</li>
                 </ul>
             </div>
-            <div className="flex justify-between items-center gap-4 bg-blue-400 my-10 rounded-3xl px-6 py-3" style={{ background: "#EEF5FF" }}>
-                <div className="max-w-[40%]">
+            <div className="lg:flex lg:justify-between lg:items-center lg:gap-4 bg-[#EEF5FF] my-10 px-6 py-3 2xl:rounded-3xl">
+                <div className="lg:max-w-[40%]">
                     <div>
-                        <p className="text-[4rem] font-bold my-4">
+                        <p className="md:text-6xl text-3xl font-bold my-4">
                             Let&apos;s Learn & Earn
                         </p>
-                        <p className="text-[2.5rem] my-4">
+                        <p className="md:text-4xl text-2xl my-4">
                             Get a chance to win
                             up-to <span className="text-blue-500 font-bold">Rs. 15,000</span>
                         </p>
@@ -38,7 +38,7 @@ function Promo() {
                         Refer now
                     </Button>
                 </div>
-                <img src={Anniversary} alt="promo" className="max-w-[814px] max-h-[650px] object-cover" />
+                <img src={Anniversary} alt="promo" className="lg:max-w-[814px] lg:max-h-[650px] object-cover" />
             </div>
             <ReferralForm isOpen={isModalOpen} handleClose={handleCloseModal} />
         </div>
