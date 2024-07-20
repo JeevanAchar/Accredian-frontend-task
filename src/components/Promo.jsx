@@ -13,7 +13,6 @@ function Promo() {
     const handleCloseModal = () => {
         setIsModalOpen(false);
     }
-function Promo() {
     return (
         <div className="w-full 2xl:max-w-7xl mx-auto">
             <div className="max-w-3xl bg-blue-400 mx-auto px-6 py-3 font-medium rounded-3xl mt-10" style={{ background: "#E6F0FD" }}>
