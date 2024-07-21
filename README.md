@@ -1,71 +1,83 @@
-# Getting Started with Create React App
+# Refer & Earn Landing Page Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a web application for a "Refer & Earn" landing page built using React.js. The application features a popup modal for a referral form, which includes fields for details about both the referrer and the referee. After a successful referral, the referee will receive an email notification. The application is styled using Tailwind CSS and utilizes Formik and Yup for form handling and validation. Nodemailer is used for sending emails. The application is hosted on Vercel.
 
-## Available Scripts
+- Table of Contents
+  * Features
+  * Technologies Used
+  * Getting Started
+  * Prerequisites
+  * Installation
+  * Running the Application
+  * Deployment
+  * Contributing
+  * License
 
-In the project directory, you can run:
+- Features
+  * User-friendly "Refer & Earn" landing page.
+  * Popup modal with a referral form.
+  * Form validation using Formik and Yup.
+  * Email notification to the referee upon successful referral using Nodemailer.
+  * Responsive design with Tailwind CSS.
+  
+- Technologies Used
+  * React.js
+  * Formik
+  * Yup
+  * Tailwind CSS
+  * Nodemailer
+  * Vercel
+  * Getting Started
+  * Prerequisites
+  
+- Make sure you have the following installed on your local development environment:
+  * Node.js (v16 or above)
+  * npm (v8 or above) or yarn (v1.22 or above)
+  * Git
+  
+- Installation
+  * Follow these steps to clone the repository and set up the application locally:
 
-### `npm start`
+- Clone the repository:
+  * git clone https://github.com/yourusername/refer-earn-landing-page.git
+  *cd refer-earn-landing-page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Install dependencies: 
+ * npm install
+ * # or if you are using yarn
+ * yarn install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Running the Application
+  * To start the application in development mode, run:
+  * npm start
+  * # or if you are using yarn
+  * yarn start
+  * The application will be available at http://localhost:3000.
 
-### `npm test`
+- Deployment
+  * This application is set up to be deployed on Vercel. Follow these steps to deploy:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Install Vercel CLI:
+  * npm install -g vercel
+  * # or if you are using yarn
+  * yarn global add vercel
+    
+- Login to Vercel:
+  * vercel login
+    
+- Deploy the application:
+  * vercel
+  * Follow the prompts to complete the deployment.
 
-### `npm run build`
+- Contributing
+  * Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Accredian-frontend-task
+- Fork the repository
+  * Create a new branch:
+  * git checkout -b feature/your-feature-name
+  * Make your changes
+  * Commit your changes:
+  * git commit -m "Add some feature"
+  * Push to the branch:
+  * git push origin feature/your-feature-name
+  * Create a pull request
