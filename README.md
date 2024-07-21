@@ -81,3 +81,9 @@ This repository contains a web application for a "Refer & Earn" landing page bui
   * Push to the branch:
   * git push origin feature/your-feature-name
   * Create a pull request
+![Screenshot 2024-07-21 033220](https://github.com/user-attachments/assets/2afbf183-9291-44c9-8481-e9c9450ad3ec)
+![Screenshot 2024-07-21 033235](https://github.com/user-attachments/assets/a6dd1c66-1286-485c-8cb2-64cee7421316)
+![Screenshot 2024-07-21 033247](https://github.com/user-attachments/assets/62e8ec67-c527-4368-808c-15e473ff7526)
+![Screenshot 2024-07-21 033315](https://github.com/user-attachments/assets/24a1dbb8-3db6-4f15-a718-d35c54e26549)
+![mailImg](https://github.com/user-attachments/assets/addb8370-9fa9-49e1-a1e0-ce3a3b2975bf)
+
